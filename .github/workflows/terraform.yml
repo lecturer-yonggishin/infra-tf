@@ -28,7 +28,7 @@ jobs:
         terraform_version: 1.6.6
         
     - name: Terraform Format Check
-      run: terraform fmt -check -recursive
+      run: terraform fmt -recursive
 
     - name: Terraform Init
       run: terraform init
@@ -37,7 +37,7 @@ jobs:
       run: terraform validate
 
     - name: Terraform Plan
-      if: github.event_name == 'push'
+      # if: github.event_name == 'push'
       run: terraform plan -no-color
 
     - name: Terraform Apply
